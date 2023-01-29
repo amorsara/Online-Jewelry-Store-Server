@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MyShoppingModelStoreContainer" CdmEntityContainer="MyShoppingEntities">
+    <EntitySetMapping Name="Clients">
+      <EntityTypeMapping TypeName="MyShoppingModel.Clients">
+        <MappingFragment StoreEntitySet="Clients">
+          <ScalarProperty Name="codeClient" ColumnName="codeClient" />
+          <ScalarProperty Name="nameClient" ColumnName="nameClient" />
+          <ScalarProperty Name="IdClient" ColumnName="IdClient" />
+          <ScalarProperty Name="phoneClient" ColumnName="phoneClient" />
+          <ScalarProperty Name="PasswordClient" ColumnName="PasswordClient" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OrderDetails">
+      <EntityTypeMapping TypeName="MyShoppingModel.OrderDetails">
+        <MappingFragment StoreEntitySet="OrderDetails">
+          <ScalarProperty Name="codeOrderDetails" ColumnName="codeOrderDetails" />
+          <ScalarProperty Name="codeOrder" ColumnName="codeOrder" />
+          <ScalarProperty Name="codeProduct" ColumnName="codeProduct" />
+          <ScalarProperty Name="Counts" ColumnName="Counts" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Orders">
+      <EntityTypeMapping TypeName="MyShoppingModel.Orders">
+        <MappingFragment StoreEntitySet="Orders">
+          <ScalarProperty Name="codeOrder" ColumnName="codeOrder" />
+          <ScalarProperty Name="codeClient" ColumnName="codeClient" />
+          <ScalarProperty Name="finalPrice" ColumnName="finalPrice" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Product">
+      <EntityTypeMapping TypeName="MyShoppingModel.Product">
+        <MappingFragment StoreEntitySet="Product">
+          <ScalarProperty Name="codeProduct" ColumnName="codeProduct" />
+          <ScalarProperty Name="nameProduct" ColumnName="nameProduct" />
+          <ScalarProperty Name="colorProduct" ColumnName="colorProduct" />
+          <ScalarProperty Name="materialProduct" ColumnName="materialProduct" />
+          <ScalarProperty Name="countProduct" ColumnName="countProduct" />
+          <ScalarProperty Name="priceProduct" ColumnName="priceProduct" />
+          <ScalarProperty Name="descriptionProduct" ColumnName="descriptionProduct" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="MyShoppingModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

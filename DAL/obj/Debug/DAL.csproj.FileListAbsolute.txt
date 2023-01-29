@@ -1,0 +1,24 @@
+D:\משתמש\Desktop\פרויקט אנגולר\Project\Project\DAL\bin\Debug\DAL.dll.config
+D:\משתמש\Desktop\פרויקט אנגולר\Project\Project\DAL\bin\Debug\DAL.dll
+D:\משתמש\Desktop\פרויקט אנגולר\Project\Project\DAL\bin\Debug\DAL.pdb
+D:\משתמש\Desktop\פרויקט אנגולר\Project\Project\DAL\bin\Debug\EntityFramework.dll
+D:\משתמש\Desktop\פרויקט אנגולר\Project\Project\DAL\bin\Debug\EntityFramework.SqlServer.dll
+D:\משתמש\Desktop\פרויקט אנגולר\Project\Project\DAL\bin\Debug\EntityFramework.xml
+D:\משתמש\Desktop\פרויקט אנגולר\Project\Project\DAL\bin\Debug\EntityFramework.SqlServer.xml
+D:\משתמש\Desktop\פרויקט אנגולר\Project\Project\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
+D:\משתמש\Desktop\פרויקט אנגולר\Project\Project\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+D:\משתמש\Desktop\פרויקט אנגולר\Project\Project\DAL\obj\Debug\DAL.csproj.CopyComplete
+D:\משתמש\Desktop\פרויקט אנגולר\Project\Project\DAL\obj\Debug\DAL.dll
+D:\משתמש\Desktop\פרויקט אנגולר\Project\Project\DAL\obj\Debug\DAL.pdb
+D:\לימודים\ANGULAR\‏‏פרויקט אנגולר - עותק\Project\Project\DAL\bin\Debug\DAL.dll.config
+D:\לימודים\ANGULAR\‏‏פרויקט אנגולר - עותק\Project\Project\DAL\bin\Debug\DAL.dll
+D:\לימודים\ANGULAR\‏‏פרויקט אנגולר - עותק\Project\Project\DAL\bin\Debug\DAL.pdb
+D:\לימודים\ANGULAR\‏‏פרויקט אנגולר - עותק\Project\Project\DAL\bin\Debug\EntityFramework.dll
+D:\לימודים\ANGULAR\‏‏פרויקט אנגולר - עותק\Project\Project\DAL\bin\Debug\EntityFramework.SqlServer.dll
+D:\לימודים\ANGULAR\‏‏פרויקט אנגולר - עותק\Project\Project\DAL\bin\Debug\EntityFramework.xml
+D:\לימודים\ANGULAR\‏‏פרויקט אנגולר - עותק\Project\Project\DAL\bin\Debug\EntityFramework.SqlServer.xml
+D:\לימודים\ANGULAR\‏‏פרויקט אנגולר - עותק\Project\Project\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
+D:\לימודים\ANGULAR\‏‏פרויקט אנגולר - עותק\Project\Project\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+D:\לימודים\ANGULAR\‏‏פרויקט אנגולר - עותק\Project\Project\DAL\obj\Debug\DAL.csproj.CopyComplete
+D:\לימודים\ANGULAR\‏‏פרויקט אנגולר - עותק\Project\Project\DAL\obj\Debug\DAL.dll
+D:\לימודים\ANGULAR\‏‏פרויקט אנגולר - עותק\Project\Project\DAL\obj\Debug\DAL.pdb

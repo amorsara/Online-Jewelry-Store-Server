@@ -1,0 +1,16 @@
+D:\משתמש\Desktop\פרויקט אנגולר\Project\Project\BLL\obj\Debug\BLL.csprojAssemblyReference.cache
+D:\משתמש\Desktop\פרויקט אנגולר\Project\Project\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+D:\משתמש\Desktop\פרויקט אנגולר\Project\Project\BLL\bin\Debug\BLL.dll
+D:\משתמש\Desktop\פרויקט אנגולר\Project\Project\BLL\bin\Debug\BLL.pdb
+D:\משתמש\Desktop\פרויקט אנגולר\Project\Project\BLL\bin\Debug\DAL.dll
+D:\משתמש\Desktop\פרויקט אנגולר\Project\Project\BLL\bin\Debug\EntityFramework.dll
+D:\משתמש\Desktop\פרויקט אנגולר\Project\Project\BLL\bin\Debug\DAL.pdb
+D:\משתמש\Desktop\פרויקט אנגולר\Project\Project\BLL\bin\Debug\DAL.dll.config
+D:\משתמש\Desktop\פרויקט אנגולר\Project\Project\BLL\bin\Debug\EntityFramework.xml
+D:\משתמש\Desktop\פרויקט אנגולר\Project\Project\BLL\obj\Debug\BLL.csproj.CopyComplete
+D:\משתמש\Desktop\פרויקט אנגולר\Project\Project\BLL\obj\Debug\BLL.dll
+D:\משתמש\Desktop\פרויקט אנגולר\Project\Project\BLL\obj\Debug\BLL.pdb
+D:\לימודים\ANGULAR\‏‏פרויקט אנגולר - עותק\Project\Project\BLL\obj\Debug\BLL.csprojAssemblyReference.cache
+D:\לימודים\ANGULAR\‏‏פרויקט אנגולר - עותק\Project\Project\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+D:\לימודים\ANGULAR\‏‏פרויקט אנגולר - עותק\Project\Project\BLL\obj\Debug\BLL.dll
+D:\לימודים\ANGULAR\‏‏פרויקט אנגולר - עותק\Project\Project\BLL\obj\Debug\BLL.pdb

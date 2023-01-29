@@ -1,0 +1,1428 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>RLF.Runtimes</name>
+    </assembly>
+    <members>
+        <member name="T:RLF.Runtimes.Agents.AesAgent">
+            <summary>
+            【闻祖东 2018-05-02 144838】CBC 模式(key 和 iv 都需要，且长度均为 16)，填充是PKCS 7，数据块长度是 128，输出为Base64，字符集为 utf-8。
+            </summary>
+        </member>
+        <member name="M:RLF.Runtimes.Agents.AesAgent.Encrypt(System.String)">
+            <summary>
+            【闻祖东 2016-08-17 145921】对字符串进行加密
+            </summary>
+            <param name="key">指定密钥,密钥使用UTF8编码成byte[]后长度必须为16</param>
+            <param name="iv">指定向量,向量使用UTF8编码成byte[]后长度必须为16</param>
+            <param name="toEncrypt">要加密的字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:RLF.Runtimes.Agents.AesAgent.Decrypt(System.String)">
+            <summary>
+            【闻祖东 2016-08-17 145925】对字符串进行解密
+            </summary>
+            <param name="key">指定密钥,密钥使用UTF8编码成byte[]后长度必须为16 !</param>
+            <param name="iv">指定向量,向量使用UTF8编码成byte[]后长度必须为16 !</param>
+            <param name="toDecrypt">要解密的字符串</param>
+            <returns></returns>
+        </member>
+        <member name="T:RLF.Runtimes.Agents.AesAgentSlim">
+            <summary>
+            【闻祖东 2018-05-02 145213】默认 ECB 模式，key 长度为 16，不需要iv。填充是PKCS 7，数据块长度是 128，输出为Base64，字符集为 utf-8。
+            </summary>
+        </member>
+        <member name="M:RLF.Runtimes.Agents.CrossSiteAgent.GenFP">
+            <summary>
+            【闻祖东 2018-07-10 104901】只是标识这个字符串是由Roleft生成的而已。
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RLF.Runtimes.Agents.CrossSiteAgent.ChkFP(System.String,System.Int32)">
+            <summary>
+            【闻祖东 2018-07-10 105604】检查指纹是否合法
+            </summary>
+            <param name="fingerPrint"></param>
+            <param name="minutes"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RLF.Runtimes.Agents.CrossSiteAgent.GenAuthReqStr(RLF.Runtimes.Models.Entities.CrossSite.RoleftAuthReq)">
+            <summary>
+            【闻祖东 2018-07-12 210143】并不能直接解密，因为已经将 + 号替换为 %2b 便于Url传输。
+            </summary>
+            <param name="req"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RLF.Runtimes.Agents.CrossSiteAgent.GenUknStr(RLF.Runtimes.Models.Entities.CrossSite.UserToken)">
+            <summary>
+            【闻祖东 2018-07-12 210143】并不能直接解密，因为已经将 + 号替换为 %2b 便于Url传输。
+            </summary>
+            <param name="req"></param>
+            <returns></returns>
+        </member>
+        <member name="T:RLF.Runtimes.Agents.IpAgent">
+            <summary>
+            【闻祖东 2016-10-28 151621】在阿里云网络环境下获取用户IP。
+            从昌波李处复制过来，未做修改或重构。
+            </summary>
+        </member>
+        <member name="T:RLF.Runtimes.Agents.JwtAgent">
+            <summary>
+            【闻祖东 2017-02-13 134522】JWT的代理方法类。
+            </summary>
+        </member>
+        <member name="M:RLF.Runtimes.Agents.JwtAgent.C2Plain(System.String)">
+            <summary>
+            【闻祖东 2017-03-11 171232】将Token中的内容部分提取出来。
+            </summary>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="P:RLF.Runtimes.Agents.JwtConfig.Key">
+            <summary>
+            【闻祖东 2017-02-13 135622】长度任意指定.
+            </summary>
+        </member>
+        <member name="M:RLF.Runtimes.Extentions.xBlockingCollection.xTakeAll``1(System.Collections.Concurrent.BlockingCollection{``0})">
+            <summary>
+            【闻祖东 2015-09-05 115946】获取这一时间点coll中的所有元素剥离出coll。
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="coll"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RLF.Runtimes.Extentions.xBlockingCollection.xTakeAll2Do``1(System.Collections.Concurrent.BlockingCollection{``0},System.Action{``0})">
+            <summary>
+            【闻祖东 2015-10-23 135608】获取当前时间点的所有元素并作为参数执行某个方法。
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="coll"></param>
+            <param name="action"></param>
+        </member>
+        <member name="M:RLF.Runtimes.Extentions.xBsonDocument.xId(MongoDB.Bson.BsonDocument)">
+            <summary>
+            【闻祖东 2015-01-23 164921】获取BsonDocument的Id的字符串的值。
+            </summary>
+            <param name="doc"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RLF.Runtimes.Extentions.xDateTime.xToTimestamp(System.DateTime)">
+            <summary>
+            【闻祖东 2015-07-27 163827】获得时间戳。
+            </summary>
+            <param name="dt"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RLF.Runtimes.Extentions.xDateTime.xToDateString(System.DateTime)">
+            <summary>
+            【闻祖东 2015-07-27 163722】生成时间格式形如 2015-07-27
+            </summary>
+            <param name="dt"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RLF.Runtimes.Extentions.xDateTime.xToLongString(System.DateTime)">
+            <summary>
+            【闻祖东 2015-07-27 163740】生成时间格式形如 2015-07-27 16:35:09 328095
+            </summary>
+            <param name="dt"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RLF.Runtimes.Extentions.xDateTime.xToDateTimeString(System.DateTime)">
+            <summary>
+            【闻祖东 2015-08-28 142859】生成时间格式形如 2015-07-27 16:35:09
+            </summary>
+            <param name="dt"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RLF.Runtimes.Extentions.xDateTime.xKind(System.DateTime,System.DateTimeKind)">
+            <summary>
+            【闻祖东 2015-10-09 100625】为时间值设置Kind属性。
+            </summary>
+            <param name="dt"></param>
+            <param name="kind"></param>
+        </member>
+        <member name="M:RLF.Runtimes.Extentions.xDateTime.xBetween(System.DateTime,System.DateTime,System.DateTime)">
+            <summary>
+            【闻祖东 2015-11-25 160004】检查时间是否在一个时间区间内，取大于等于和小于等于。
+            </summary>
+            <param name="dt"></param>
+            <param name="start"></param>
+            <param name="end"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RLF.Runtimes.Extentions.xDateTime.xAsExpireTime(System.DateTime)">
+            <summary>
+            【闻祖东 2019-03-29 115904】所有的“过期时间”概念，比如如果我们定义的过期时间是“2019-03-29”，没有具体精确到时分秒的话，那么指的是 “2019-03-29 23:59:59” 。此约定只针对 “过期时间” 而非“生效时间”。
+            </summary>
+            <param name="dt"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RLF.Runtimes.Extentions.xDateTime.xIsExpired(System.DateTime)">
+            <summary>
+            【闻祖东 2019-04-04 111506】和当前时间比，是否过期（即当前时间已经比该值要大）。
+            </summary>
+            <param name="dt"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RLF.Runtimes.Extentions.xDateTime.xIsNotyet(System.DateTime)">
+            <summary>
+            【闻祖东 2019-04-04 111613】和当前时间比，是否还未到。(即当前时间比该值小)。
+            </summary>
+            <param name="dt"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RLF.Runtimes.Extentions.xDictionary.xSureAdd``2(System.Collections.Generic.Dictionary{``0,System.Collections.Generic.List{``1}},``0,``1)">
+            <summary>
+            【闻祖东 2019-04-04 092916】确保字典的 Value 集合里面添加一个 value。（并不检查 value 这个List的排重）。 如果没有 key，则会添加一个 key。
+            </summary>
+            <typeparam name="TKey"></typeparam>
+            <typeparam name="TValue"></typeparam>
+            <param name="dic"></param>
+            <param name="key"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:RLF.Runtimes.Extentions.xDictionary.xSure``2(System.Collections.Generic.Dictionary{``0,``1},``0,``1)">
+            <summary>
+            【闻祖东 2019-04-08 155901】确保此键有值。1. 如果有此key，就返回此key对应的value；2.如果没有此key，就使用 potentialValue 进行赋值。
+            </summary>
+            <typeparam name="TKey"></typeparam>
+            <typeparam name="TValue"></typeparam>
+            <param name="dic"></param>
+            <param name="key"></param>
+            <param name="potentialValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RLF.Runtimes.Extentions.xEnum.xGetDescription(System.Enum)">
+            <summary>
+            【闻祖东 2015-01-12 205817】获取当前枚举值上的Description特性的值——如果有的话。
+            </summary>
+            <param name="enumSubitem"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RLF.Runtimes.Extentions.xEnum.xGetValues(System.Enum,System.Boolean)">
+            <summary>
+            【闻祖东 2016-01-20 141452】遍历所有的枚举值。
+            </summary>
+            <param name="enumSubItem"></param>
+            <param name="hasUnknown">【闻祖东 2016-01-20 141508】是否包含“Unknown”值</param>
+            <returns></returns>
+        </member>
+        <member name="M:RLF.Runtimes.Extentions.xIEnumerable.xDistinctBy``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1})">
+            <summary>
+            【闻祖东 2015-09-10 175631】使用方法可以参照http://www.cnblogs.com/A_ming/archive/2013/05/24/3097062.html 中的方法2.不错的方法。
+            </summary>
+            <typeparam name="TSource"></typeparam>
+            <typeparam name="TKey"></typeparam>
+            <param name="source"></param>
+            <param name="keySelector"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RLF.Runtimes.Extentions.xIEnumerable.xPartition``1(System.Collections.Generic.IEnumerable{``0},System.Int32)">
+            <summary>
+            【zdwen 2013-4-11-235737】分成每一份拥有固定数量元素的List。
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="list"></param>
+            <param name="eachPartitionCount">【zdwen 2013-4-26-151744】标识每一份有多少个对象。</param>
+            <returns></returns>
+        </member>
+        <member name="M:RLF.Runtimes.Extentions.xIEnumerable.xDevide``1(System.Collections.Generic.IEnumerable{``0},System.Int32)">
+            <summary>
+            【zdwen 2013-4-26-172250】总共需要将List分成指定数量的份数。
+            【zdwen 2014-2-13-112832】也就是说，分成多少份。
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="list"></param>
+            <param name="devideCount"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RLF.Runtimes.Extentions.xIEnumerable.xCalcPageCount``1(System.Collections.Generic.IEnumerable{``0},System.Int32)">
+            <summary>
+            【闻祖东 2015-12-16 173955】计算分页之后的页数。
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="list"></param>
+            <param name="pageSize"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RLF.Runtimes.Extentions.xList.xCut``1(System.Collections.Generic.List{``0},System.Int32)">
+            <summary>
+            【闻祖东 2018-08-02 154216】按照顺序从头顶“斩去” count 个元素，原来的 List 对象移除这 count 个元素。
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="source"></param>
+            <param name="count"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RLF.Runtimes.Extentions.xList.xTakeRandom``1(System.Collections.Generic.IList{``0},System.Int32)">
+            <summary>
+            【闻祖东 2015-11-12 180621】根据下标获取随机的对象，并不判断对象的引用地址是否重复。
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="source"></param>
+            <param name="count"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RLF.Runtimes.Extentions.xList.xTakeRandom``1(System.Collections.Generic.IList{``0})">
+            <summary>
+            【闻祖东 2019-02-21 195750】随机的取出一个元素，但并不从 List 中删除。
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="source"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RLF.Runtimes.Extentions.xList.xShuffle``1(System.Collections.Generic.IList{``0})">
+            <summary>
+            【闻祖东 2018-05-10 160545】打乱排序——洗牌。
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="source"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RLF.Runtimes.Extentions.xList.xChaosTake``1(System.Collections.Generic.List{``0},System.Int32)">
+            <summary>
+            【闻祖东 2018-07-11 162914】打乱顺序并随机取出不定数量的值。
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="source"></param>
+            <param name="min"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RLF.Runtimes.Extentions.xList.GenRandomIndexes(System.Int32,System.Int32)">
+            <summary>
+            【闻祖东 2018-08-02 150336】生成乱序的下标列表。
+            </summary>
+            <param name="total"></param>
+            <param name="need"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RLF.Runtimes.Extentions.xList.GenRandomIndexes(System.Int32)">
+            <summary>
+            【闻祖东 2018-08-02 150432】生成乱序的下标列表。
+            </summary>
+            <param name="total"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RLF.Runtimes.Extentions.xNameValueCollection.xInt(System.Collections.Specialized.NameValueCollection,System.String,System.Int32)">
+            <summary>
+            【闻祖东 2016-09-29 120552】用于QueryString的int类型值的获取，默认值如若不指定则为0.
+            </summary>
+            <param name="queryString"></param>
+            <param name="key"></param>
+            <param name="defaultValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RLF.Runtimes.Extentions.xString.xStartsWith(System.String,System.String)">
+            <summary>
+            【闻祖东 2017-10-17 102944】使用忽略大小写的方式来判断字符串是否以特定字符串开头。
+            </summary>
+            <param name="str"></param>
+            <param name="subString"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RLF.Runtimes.Extentions.xString.xIsPhone(System.String)">
+            <summary>
+            【闻祖东 2018-03-23 113638】不一定能够满足日益新增的号码段的需求。
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RLF.Runtimes.Extentions.xStringRegex.xMatch(System.String,System.String)">
+            <summary>
+            【闻祖东 2015-12-04 114427】匹配表达式，匹配不上则会报异常。
+            </summary>
+            <param name="source"></param>
+            <param name="pattern"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RLF.Runtimes.Extentions.xStringRegex.xMatchExtract(System.String,System.String,System.String)">
+            <summary>
+            【闻祖东 2015-12-04 114418】匹配和提取
+            </summary>
+            <param name="source"></param>
+            <param name="prefixPattern"></param>
+            <param name="suffixPattern"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RLF.Runtimes.Extentions.xStringRegex.xMatchExtract(System.String,System.String,System.String,System.String)">
+            <summary>
+            【闻祖东 2015-12-09 172759】应用于筛选前段和后段并不是靠拼接起来的类型。
+            </summary>
+            <param name="source"></param>
+            <param name="pattern"></param>
+            <param name="prefixPattern"></param>
+            <param name="suffixPattern"></param>
+            <param name="options"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RLF.Runtimes.Extentions.xStringRegex.xMatchesExtract(System.String,System.String,System.String,System.String)">
+            <summary>
+            【闻祖东 2015-12-16 222214】应用于筛选前段和后段并不是靠拼接起来的类型。
+            </summary>
+            <param name="source"></param>
+            <param name="pattern"></param>
+            <param name="prefixPattern"></param>
+            <param name="suffixPattern"></param>
+            <param name="options"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RLF.Runtimes.Extentions.xType.xIsEnumOrNullableEnum(System.Type)">
+            <summary>
+            【闻祖东 2018-11-04 152944】即使是可空类型的枚举，在这个扩展方法中也认为是枚举。
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:RLF.Runtimes.Extentions.xType.xFactEnumType(System.Type)" -->
+        <member name="M:RLF.Runtimes.Extentions.xType.xSelfCheckIfEnum(System.Type)">
+            <summary>
+            【闻祖东 2019-03-29 152218】自检属于枚举业务相关的结果。
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="T:RLF.Runtimes.Models.Entities.Algorithmes.Crc32Algorithm">
+            <summary>
+            Based on http://sanity-free.org/12/crc32_implementation_in_csharp.html
+            【闻祖东 2016-04-07 174926】https://github.com/dariogriffo/Crc32.git 做了部分代码风格重构，逻辑无修改。
+            </summary>
+        </member>
+        <member name="T:RLF.Runtimes.Models.Entities.Algorithmes.RsaPkcs8Util">
+            <summary>
+            【闻祖东 2016-04-08 144425】对于RSA密钥的格式，不同的语言是不同的，如C#是xml格式，Java是二进制流，其他语言又可能是另外一种格式。为了解决这个问题，一种统一的密钥格式Pkcs8应运而生。
+            算法应该没有问题，当时因为封装的原因还不能拿来直接使用。
+            </summary>
+        </member>
+        <member name="T:RLF.Runtimes.Models.Entities.Api.ApiResult">
+            <summary>
+            【闻祖东 2017-07-27 151935】Roleft 定义的返回给客户端的结果基础类型定义。
+            </summary>
+        </member>
+        <member name="P:RLF.Runtimes.Models.Entities.Api.ApiResult.Status">
+            <summary>
+            【闻祖东 2018-04-13 154527】结果状态
+            </summary>
+        </member>
+        <member name="P:RLF.Runtimes.Models.Entities.Api.ApiResult.Msg">
+            <summary>
+            【闻祖东 2018-04-13 154518】消息，不一定总是存在
+            </summary>
+        </member>
+        <member name="P:RLF.Runtimes.Models.Entities.Api.ApiResult.T">
+            <summary>
+            【闻祖东 2018-04-13 154511】系统时间
+            </summary>
+        </member>
+        <member name="P:RLF.Runtimes.Models.Entities.Api.ApiResult.Server">
+            <summary>
+            【闻祖东 2018-04-13 154458】运行所在服务器实例
+            </summary>
+        </member>
+        <member name="P:RLF.Runtimes.Models.Entities.Api.ApiResult.Sign">
+            <summary>
+            【闻祖东 2016-08-19 161549】签名。用于客户端判断服务端数据是否有更新。
+            </summary>
+        </member>
+        <member name="T:RLF.Runtimes.Models.Entities.Attributes.CalcMemoryAttribute">
+            <summary>
+            【闻祖东 2016-11-21 202003】需要计算内存的对象的特性描述。
+            </summary>
+        </member>
+        <member name="T:RLF.Runtimes.Models.Entities.Attributes.RoleftHelpAttribute">
+            <summary>
+            【闻祖东 2017-07-27 150450】Roleft 系统的属性特性，用于便于人阅读返回结果的友好性。
+            【闻祖东 2016-10-08 155212】标识为参数在实际业务当中的顺序。
+            </summary>
+        </member>
+        <member name="P:RLF.Runtimes.Models.Entities.CrossSite.RoleftAuthReq.From">
+            <summary>
+            【闻祖东 2018-07-04 203642】来自的源url，包括path和QueryString
+            </summary>
+        </member>
+        <member name="M:RLF.Runtimes.Models.Entities.CrossSite.RoleftAuthResp.ChkIfMainSite(System.String)">
+            <summary>
+            【闻祖东 2018-07-11 212110】检查url是否来自官方主站。
+            </summary>
+            <param name="url"></param>
+            <returns></returns>
+        </member>
+        <member name="T:RLF.Runtimes.Models.Entities.DevidedList`1">
+            <summary>
+            【zdwen 2014-8-27-180103】列表的列表类型。
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="T:RLF.Runtimes.Models.Entities.Duration">
+            <summary>
+            【闻祖东 2018-11-02 100002】时间持续区间。
+            </summary>
+        </member>
+        <member name="P:RLF.Runtimes.Models.Entities.Duration.Fire">
+            <summary>
+            【闻祖东 2018-11-02 100022】起始时间
+            </summary>
+        </member>
+        <member name="P:RLF.Runtimes.Models.Entities.Duration.Expire">
+            <summary>
+            【闻祖东 2018-11-02 100114】结束时间
+            </summary>
+        </member>
+        <member name="T:RLF.Runtimes.Models.Entities.Json.Converters.EnumJsonConverter">
+             <summary>
+            TODO【闻祖东 2016-08-17 150904】枚举如果直接输出为int值的话，这个converter其实用不太上。
+             </summary>
+        </member>
+        <member name="F:RLF.Runtimes.Models.Entities.Json.Converters.EnumJsonConverter._strUnknown">
+            <summary>
+            【闻祖东 2019-02-20 205633】我已强制约定项目中的所有枚举项必须要有一个 Unknown 项。
+            </summary>
+        </member>
+        <member name="T:RLF.Runtimes.Models.Entities.Json.Attributes.RoleftDeserializableAttribute">
+            <summary>
+            【闻祖东 2016-10-18 214614】标识是否有反序列化需求的特性字段。
+            当前情况下，只是接口输出的不需要反序列化，但是对于后台管理系统来说，则是需要的。
+            </summary>
+        </member>
+        <member name="P:RLF.Runtimes.Models.Entities.Json.Attributes.RoleftDeserializableAttribute.Ignored">
+            <summary>
+            【闻祖东 2016-10-18 214959】标识此属性是否可以被忽略。
+            </summary>
+        </member>
+        <member name="P:RLF.Runtimes.Models.Entities.Json.Attributes.RoleftHelpDescriptionAttribute.Ignored">
+            <summary>
+            【闻祖东 2015-07-20 103445】标识此属性是否需要在序列化时候输出。
+            </summary>
+        </member>
+        <member name="T:RLF.Runtimes.Models.Entities.Json.Attributes.MilliSecondAttribute">
+            <summary>
+            【闻祖东 2016-09-02 112650】时间格式文本输出时带毫秒数据。
+            </summary>
+        </member>
+        <member name="T:RLF.Runtimes.Models.Entities.Mns.SubscriberHost">
+            <summary>
+            【闻祖东 2019-03-14 205510】订阅者的主机名。
+            </summary>
+        </member>
+        <member name="P:RLF.Runtimes.Models.Entities.Mns.SubscriberHost.Anyone">
+            <summary>
+            【闻祖东 2019-03-14 205522】用于一个通知只需要有一个订阅者执行即可。一般填 SLB 的 域名 地址即可。 形如 https://a2.nuoqu88.com/
+            </summary>
+        </member>
+        <member name="P:RLF.Runtimes.Models.Entities.Mns.SubscriberHost.Everyone">
+            <summary>
+            【闻祖东 2019-03-14 205611】用于一个通知需要通知到所有的相关者。一般填写 ECS 的 Ip 地址，必要的时候需要添加端口号，此时请注意打开安全组的端口策略放行。形如 http://123.45.34.23:8080/
+            </summary>
+        </member>
+        <member name="T:RLF.Runtimes.Models.Entities.LiteUser">
+            <summary>
+            【闻祖东 2018-11-12 093255】代表微信的用户基本非隐私信息。
+            【闻祖东 2019-04-04 173441】重命名一次，使用LiteUser，代表轻量级的用户信息。
+            【闻祖东 2019-04-19 144334】两个用户的Id相同，Ltc系统里面我们就认为两个LiteUser对象是同一个，而不论Nick或Icon是否相同。
+            </summary>
+        </member>
+        <member name="T:RLF.Runtimes.Models.Entities.QiNiu.QiNiuRespCode">
+            <summary>
+            【闻祖东 2017-06-23 152522】七牛的返回代码说明
+            Ref2：https://developer.qiniu.com/kodo/api/1312/upload#upload-response-status
+            </summary>
+        </member>
+        <member name="T:RLF.Runtimes.Models.Entities.KeyValue`2">
+            <summary>
+            【闻祖东 2016-10-08 154945】不同于Dictionary的KeyValuePair
+            </summary>
+        </member>
+        <member name="F:RLF.Runtimes.Models.Entities.MongoDb.Helpers.BsonValueHelper.HelperType.GeneralClass">
+            <summary>
+            【闻祖东 2015-01-13 164137】普通类型。
+            </summary>
+        </member>
+        <member name="M:RLF.Runtimes.Models.Entities.MongoDb.Helpers.BsonValueHelper.CheckIfBsonIgnore(System.Type,System.String)">
+            <summary>
+            【闻祖东 2016-10-08 111251】检查是否被BsonIgnore特性修饰。规则是按照名称相同的属性名称，而不会判断是否new修饰的属性。
+            </summary>
+            <param name="tp"></param>
+            <param name="propertyName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RLF.Runtimes.Models.Entities.MongoDb.Helpers.DeBsonValueHelper.ConvertFromDoc``1(MongoDB.Bson.BsonDocument)">
+            <summary>
+            【闻祖东 2015-06-26 151611】必须是public的，反射会使用到。
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="doc"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RLF.Runtimes.Models.Entities.MongoDb.Helpers.DeBsonValueHelper.ReflectGenList(System.Type)">
+            【闻祖东 2016-10-27 145619】迁移到EU类中。
+        </member>
+        <member name="M:RLF.Runtimes.Models.Entities.MongoDb.Helpers.DeBsonValueHelper.GenList``1">
+            <summary>
+            【闻祖东 2015-02-04 170523】勿删——反射调用。
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:RLF.Runtimes.Models.Entities.MongoDb.Helpers.DeBsonValueHelper.GenDictionary``2">
+            <summary>
+            【闻祖东 2015-02-04 170539】勿删——反射调用。
+            </summary>
+            <typeparam name="T"></typeparam>
+            <typeparam name="V"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="P:RLF.Runtimes.Models.Entities.MongoDb.IMongoRecord._id">
+            <summary>
+            【闻祖东 2015-08-03 170656】用于映射 BsonDocument 的 _id 字段。
+            </summary>
+        </member>
+        <member name="T:RLF.Runtimes.Models.Entities.MongoDb.MongoRecord">
+            <summary>
+            【闻祖东 2015-01-08 151009】标识这样的类对应的是Mongodb里面的一条记录。
+            </summary>
+        </member>
+        <member name="M:RLF.Runtimes.Models.Entities.MongoDb.WxQueryObjectMgDb.BeforeInsert(MongoDB.Bson.BsonDocument,System.Boolean)">
+            <summary>
+            【闻祖东 2015-01-23 181453】插入记录之前会调用的方法。
+            </summary>
+            <param name="doc"></param>
+            <param name="idSpecified">标识 _id 字段是否已经被指定了，应用程序就不会生成ObjectId。</param>
+        </member>
+        <member name="M:RLF.Runtimes.Models.Entities.MongoDb.WxQueryObjectMgDb.GenNoResult``1">
+            <summary>
+            【闻祖东 2014-9-2-161832】返回空结果集。
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:RLF.Runtimes.Models.Entities.MongoDb.WxQueryObjectMgDb.GetBsonDoc">
+            <summary>
+            【闻祖东 2015-01-07 193959】获取一个BsonDocument，如果没有符合条件的则返回null。
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RLF.Runtimes.Models.Entities.MongoDb.WxQueryObjectMgDb.GetMongoObjects``1">
+            <summary>
+            【闻祖东 2015-09-01 135627】此方法适用于返回文档全部是同一具体类，如果返回的文档中其实由不同的继承类来构成的
+            文档的话，此方法并不适用，因为各个文档的字段很有可能不一样。
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:RLF.Runtimes.Models.Entities.MongoDb.WxQueryObjectMgDb.InsertRecord``1(``0,System.Boolean)">
+            <summary>
+            【闻祖东 2015-01-05 212041】默认以SafeMode=true的方式插入记录
+            </summary>
+            <param name="doc"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RLF.Runtimes.Models.Entities.MongoDb.WxQueryObjectMgDb.RemoveRecord(System.Boolean)">
+            <summary>
+            【闻祖东 2016-01-19 160114】重新定义的删除操作，只做逻辑删除。
+            </summary>
+            <param name="safeMode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RLF.Runtimes.Models.Entities.MongoDb.WxQueryObjectMgDb.GenNullDocument">
+            <summary>
+            【闻祖东 2015-02-08 172018】返回Null文档。
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RLF.Runtimes.Models.Entities.MongoDb.WxQueryObjectMgDb.CheckIfExists">
+            <summary>
+            【闻祖东 2017-05-27 173556】检查记录是否存在
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:RLF.Runtimes.Models.Entities.MongoDb.WxQueryResult`1.DocsMatchedSum">
+            <summary>
+            【zdwen 2014-8-20-180401】数据库中匹配Query查询条件的BsonDocument文档记录总数(无视Limit和Skip条件)。
+            </summary>
+        </member>
+        <member name="P:RLF.Runtimes.Models.Entities.MongoDb.WxQueryResult`1.DataReturned">
+            <summary>
+            【zdwen 2014-8-20-180435】在当前Query、Limit、Skip共同作用下返回的记录。
+            </summary>
+        </member>
+        <member name="T:RLF.Runtimes.Models.Entities.MsSql.BlToolKit.WxQueryObject">
+            <summary>
+            【zdwen 2011-12-28-175344】CRC内部自定义的SQL命令执行对象
+            目的在于使与数据库打交道的业务中只关心必要的查询语句以及参数，
+            而不去关于创建连接以及释放资源等等，减少重复代码。
+            </summary>
+        </member>
+        <member name="P:RLF.Runtimes.Models.Entities.MsSql.BlToolKit.WxQueryObject.ConnString">
+            <summary>
+            【闻祖东 2017-09-29 173021】实际的连接字符串。
+            </summary>
+        </member>
+        <member name="P:RLF.Runtimes.Models.Entities.MsSql.BlToolKit.WxQueryObject.CmdText">
+            <summary>
+            【zdwen 2011-12-27-150501】等待执行的带参数的SQL语句或存储过程名称
+            </summary>
+        </member>
+        <member name="P:RLF.Runtimes.Models.Entities.MsSql.BlToolKit.WxQueryObject.CmdTimeOut">
+            <summary>
+            【zdwen 2013-2-4-111959】新加入的重要元素，执行的超时时间。
+            主要是近期风控检测线上环境频繁的插入操作超时。
+            </summary>
+        </member>
+        <member name="P:RLF.Runtimes.Models.Entities.MsSql.BlToolKit.WxQueryObject.EnumAsString">
+            <summary>
+            【zdwen 2014-8-27-182145】标识当传入的参数为枚举类型的时候，是否将其处理为对应的字符串，否则处理为其对应的int值。
+            </summary>
+        </member>
+        <member name="P:RLF.Runtimes.Models.Entities.MsSql.BlToolKit.WxQueryObject.CommandType">
+            <summary>
+            【zdwen 2011-12-28-171958】命令类型
+            </summary>
+        </member>
+        <member name="P:RLF.Runtimes.Models.Entities.MsSql.BlToolKit.WxQueryObject.DicInputParams">
+            <summary>
+            【zdwen 2012-1-31-154314】Input参数字典
+            </summary>
+        </member>
+        <member name="P:RLF.Runtimes.Models.Entities.MsSql.BlToolKit.WxQueryObject.DraftSqlStatement">
+            <summary>
+            【zdwen 2011-12-27-150815】执行的SQL的原始语句
+            【zdwen 2012-11-23-153111】当前已添加支持存储过程的原始执行语句输出。
+            只是当前Case不需要Output以及Return参数，故就未做实现。
+            </summary>
+        </member>
+        <member name="M:RLF.Runtimes.Models.Entities.MsSql.BlToolKit.WxQueryObject.AddParam(System.String,System.Object,System.Nullable{System.Data.SqlDbType})">
+            <summary>
+            【zdwen 2012-2-2-163120】默认的添加参数的方法，添加输入参数（InputParam）
+            【zdwen 2012-3-26-151950】默认情况下，枚举会被转换成相应的名称字符串（注）。
+            此方法引起的参数类型转换造成数据库的性能问题，此方法强制建议采用AddParam(string paramName, object paramValue, SqlDbType dbType)来替代。"
+            </summary>
+            <param name="paramName">参数名</param>
+            <param name="paramValue">参数值</param>
+        </member>
+        <member name="M:RLF.Runtimes.Models.Entities.MsSql.BlToolKit.WxQueryObject.ExecuteDataTable">
+            <summary>
+            【闻祖东 2018-10-10 102558】执行查询并返回DataTable。
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RLF.Runtimes.Models.Entities.MsSql.BlToolKit.WxQueryObject.ExecuteDataSet">
+            <summary>
+            【闻祖东 2018-10-10 102611】执行查询并返回DataSet（包含多个DataTable）。
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RLF.Runtimes.Models.Entities.MsSql.BlToolKit.WxQueryObject.ExecuteNonQuery">
+            <summary>
+            【闻祖东 2018-10-10 102345】执行语句，并返回影响的行数。
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RLF.Runtimes.Models.Entities.MsSql.BlToolKit.WxQueryObject.ExecuteList``1">
+            <summary>
+            【闻祖东 2018-10-10 102536】返回按照列名来映射的对象列表。
+            【闻祖东 2018-11-04 161426】目前还不能对可空的枚举类型完美支持，定义枚举类型的时候请注意进行初始化赋值。
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:RLF.Runtimes.Models.Entities.MsSql.BlToolKit.WxQueryObject.ExecuteListBaseType``1">
+            <summary>
+            【闻祖东 2018-10-10 102501】这里的泛型需是int、string等基本类型。用于映射只返回一列的DataTable。
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:RLF.Runtimes.Models.Entities.MsSql.BlToolKit.WxQueryObject.ExecuteObject``1">
+            <summary>
+            【闻祖东 2018-10-10 102634】执行查询并将其第一行（若有）按照列名映射成为相应对象。
+            【闻祖东 2018-11-04 161426】目前还不能对可空的枚举类型完美支持，定义枚举类型的时候请注意进行初始化赋值。
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:RLF.Runtimes.Models.Entities.MsSql.BlToolKit.WxQueryObject.ExecuteScalar``1">
+            <summary>
+            【闻祖东 2018-10-10 102419】执行命令对象的SQL语句，如果SQL语句是SELECT查询，则仅仅返回查询结果集中的第1行第1列，而忽略其他的行 和列。
+            该方法所返回的结果为object类型，在使用之前必须强制转换为所需的类型。如果SQL语句不是SELECT查询，则返回结果没有任何作用。
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:RLF.Runtimes.Models.Entities.MsSql.BlToolKit.WxQueryObject.CheckIfExists">
+            <summary>
+            【闻祖东 2018-10-23 182023】检查记录是否存在,约定输入必须是 select count(1) 的语句，且根据 ExecuteScalar 值是否大于 0 来判断。
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RLF.Runtimes.Models.Entities.MsSql.BlToolKit.WxQueryObject.ExecuteTrans(System.Data.IsolationLevel)">
+            <summary>
+            【闻祖东 2016-09-07 145642】执行事务，
+            </summary>
+            <param name="isoLevel">隔离层级</param>
+            <returns>执行结果</returns>
+        </member>
+        <member name="T:RLF.Runtimes.Models.Entities.MsSql.BlToolKit.TransResult">
+            <summary>
+            【闻祖东 2016-09-07 151319】事务的执行结果。（输出参数请还是从QueryObject的成员中取。）
+            </summary>
+        </member>
+        <member name="P:RLF.Runtimes.Models.Entities.MsSql.BlToolKit.TransResult.Effected">
+            <summary>
+            【闻祖东 2016-09-07 145929】受影响行数
+            </summary>
+        </member>
+        <member name="P:RLF.Runtimes.Models.Entities.MsSql.BlToolKit.TransResult.Succ">
+            <summary>
+            【闻祖东 2016-09-07 145955】执行结果
+            </summary>
+        </member>
+        <member name="P:RLF.Runtimes.Models.Entities.MsSql.BlToolKit.TransResult.Msg">
+            <summary>
+            【闻祖东 2016-09-07 150059】异常发生时所记录的异常消息。
+            </summary>
+        </member>
+        <member name="P:RLF.Runtimes.Models.Entities.MsSql.BlToolKit.WxQueryObjectCollection.CostSecond">
+            <summary>
+            【zdwen 2013-3-5-162525】执行所耗费的时间(s)
+            </summary>
+        </member>
+        <member name="P:RLF.Runtimes.Models.Entities.MsSql.BlToolKit.WxQueryObjectCollection.BatchCount">
+            <summary>
+            【zdwen 2013-3-5-115339】每次批量执行的条数，默认值为100。
+            </summary>
+        </member>
+        <member name="T:RLF.Runtimes.Models.Entities.MVC.RoleftJsonResult">
+            <summary>
+            【闻祖东 2016-08-19 152916】使用 Roleft 自定义的JSON序列化的JsonResult。
+            </summary>
+        </member>
+        <member name="M:RLF.Runtimes.Models.Entities.MVC.RoleftJsonResult.GenInstance4WebApi``1(``0,System.Boolean)">
+            <summary>
+            【闻祖东 2015-01-08 172150】从构造函数的地方控制住生成此类只能由JsonResultDto来完成。
+            【闻祖东 2015-09-02 180522】针对WebApi的接口的枚举一般输出数字。
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RLF.Runtimes.Models.Entities.MVC.RoleftJsonResult.GenInstance4Mvc``1(``0,System.Boolean)">
+            <summary>
+            【闻祖东 2015-01-08 172150】从构造函数的地方控制住生成此类只能由JsonResultDto来完成。
+            【闻祖东 2015-09-02 180542】针对MVC网站的接口的枚举值一般输出字符串。
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="T:RLF.Runtimes.Models.Entities.MVC.JsonResultDto">
+            <summary>
+            【闻祖东 2015-09-02 174405】定义项目中所有的JsonResult都必须遵循的数据结构。
+            </summary>
+        </member>
+        <member name="T:RLF.Runtimes.Models.Entities.MVC.JsonResultDto`1">
+            <summary>
+            【闻祖东 2014-12-05 172929】只返回一个对象的请求的JsonResult。
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="P:RLF.Runtimes.Models.Entities.Sec.Entities.Tools.LoadIpInfoResult.Area">
+            <summary>
+            【闻祖东 2016-09-08 203003】包括省份、自治区、直辖市。
+            【闻祖东 2017-03-11 195131】当CountrySide == CountrySide.Inland 时此字段有意义。
+            </summary>
+        </member>
+        <member name="P:RLF.Runtimes.Models.Entities.Sec.Entities.Tools.LoadIpInfoResult.City">
+            <summary>
+            【闻祖东 2017-03-11 195131】当CountrySide == CountrySide.Inland 时此字段有意义。
+            </summary>
+        </member>
+        <member name="P:RLF.Runtimes.Models.Entities.Sec.Entities.Tools.LoadIpInfoResult.Country">
+            <summary>
+            【闻祖东 2017-03-11 195131】当CountrySide == CountrySide.Abroad 时此字段有意义。
+            </summary>
+        </member>
+        <member name="T:RLF.Runtimes.Models.Entities.Select2.S2KvItem">
+            <summary>
+            【闻祖东 2015-01-20 222207】标识Select2的键值对对象。
+            </summary>
+        </member>
+        <member name="T:RLF.Runtimes.Models.Entities.Select2.S2KvItem`1">
+            <summary>
+            【闻祖东 2015-03-02 160339】标识除了基本的Id和Text的键值对对象之外，还有其他业务字段的业务对象。
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="T:RLF.Runtimes.Models.Entities.Select2.S2Param">
+            <summary>
+            【闻祖东 2015-03-11 165850】Select2的请求参数。
+            </summary>
+        </member>
+        <member name="T:RLF.Runtimes.Models.Entities.UtilSvc.Issues.IssueParam">
+            <summary>
+            【闻祖东 2016-08-19 161202】一个需要上报的“问题”，可以是异常，也可以是警告，也可以只是一个消息。
+            </summary>
+        </member>
+        <member name="T:RLF.Runtimes.Models.Entities.WeixinPayment.CbkPaymentInfo">
+            <summary>
+            【闻祖东 2019-03-13 162813】腾讯服务器会调用的商家端的回调地址的时候所传递的xml参数类型定义。
+            </summary>
+        </member>
+        <member name="T:RLF.Runtimes.Models.Enums.ClientRunningMode">
+            <summary>
+            【闻祖东 2017-04-01 182247】客户端运行模式
+            </summary>
+        </member>
+        <member name="T:RLF.Runtimes.Models.Enums.CompareType">
+            <summary>
+            【闻祖东 2015-08-27 180716】“作比较”的操作类型
+            </summary>
+        </member>
+        <member name="T:RLF.Runtimes.Models.Enums.iPhoneType">
+            <summary>
+            【闻祖东 2016-12-09 112349】iOS设备类型取值来自骆勇代码截图。
+            https://img.ireadercity.com/2016-12-9/from_luoyong.jpg
+            </summary>
+        </member>
+        <member name="T:RLF.Runtimes.Models.Enums.OpenScreenDevice">
+            <summary>
+            【闻祖东 2016-10-08 175900】开屏的图片类型列举
+            </summary>
+        </member>
+        <member name="T:RLF.Runtimes.Models.Enums.EditType">
+            <summary>
+            【闻祖东 2015-01-09 140615】标识业务动作，不命名为Action。
+            </summary>
+        </member>
+        <member name="F:RLF.Runtimes.Models.Enums.EditType.Create">
+            <summary>
+            新增
+            </summary>
+        </member>
+        <member name="F:RLF.Runtimes.Models.Enums.EditType.Update">
+            <summary>
+            更新
+            </summary>
+        </member>
+        <member name="F:RLF.Runtimes.Models.Enums.EditType.Remove">
+            <summary>
+            删除
+            </summary>
+        </member>
+        <member name="T:RLF.Runtimes.Models.Enums.EffectiveRange">
+            <summary>
+            【闻祖东 2019-03-20 175920】某些业务、数据的有效性范围。
+            </summary>
+        </member>
+        <member name="F:RLF.Runtimes.Models.Enums.EffectiveRange.StaffOnly">
+            <summary>
+            【闻祖东 2019-03-20 180002】仅对内部员工生效。
+            </summary>
+        </member>
+        <member name="F:RLF.Runtimes.Models.Enums.EffectiveRange.AllUsers">
+            <summary>
+            【闻祖东 2019-03-20 180021】对全体用户可见。
+            </summary>
+        </member>
+        <member name="T:RLF.Runtimes.Models.Enums.InlandArea">
+            <summary>
+            【闻祖东 2016-08-17 135757】国内地区，不命名为省（Province）
+            </summary>
+        </member>
+        <member name="T:RLF.Runtimes.Models.Enums.OpenPlatformAppType">
+            <summary>
+            【闻祖东 2019-05-30 102525】微信的开放平台定义的应用类型。
+            </summary>
+        </member>
+        <member name="F:RLF.Runtimes.Models.Enums.OpenPlatformAppType.Mobile">
+            <summary>
+            【闻祖东 2019-05-30 102809】移动应用
+            </summary>
+        </member>
+        <member name="F:RLF.Runtimes.Models.Enums.OpenPlatformAppType.Website">
+            <summary>
+            【闻祖东 2019-05-30 102827】网站应用
+            </summary>
+        </member>
+        <member name="F:RLF.Runtimes.Models.Enums.OpenPlatformAppType.OfficialAccount">
+            <summary>
+            【闻祖东 2019-05-30 102831】公众账号
+            </summary>
+        </member>
+        <member name="F:RLF.Runtimes.Models.Enums.OpenPlatformAppType.MiniProgram">
+            <summary>
+            【闻祖东 2019-05-30 102836】小程序
+            </summary>
+        </member>
+        <member name="F:RLF.Runtimes.Models.Enums.OpenPlatformAppType.Platform3rd">
+            <summary>
+            第三方平台
+            </summary>
+        </member>
+        <member name="F:RLF.Runtimes.Models.Enums.RlfWxAppType.OA_RoleftOfficial">
+            <summary>
+            【闻祖东 2019-02-15 160223】公众号，若梨官方。
+            </summary>
+        </member>
+        <member name="T:RLF.Runtimes.Models.Enums.RoleftHttpMethod">
+            <summary>
+            【闻祖东 2017-07-27 143046】基本上RLF 系统里面使用的方法也就是这两种。
+            </summary>
+        </member>
+        <member name="T:RLF.Runtimes.Models.Enums.OneOrOther">
+            <summary>
+            【闻祖东 2015-09-21 175741】此枚举用于映射某些情况下的布尔类型的选择，但是之所以不直接用布尔类型是因为需要统一定义“非此即彼”
+            之外的那种Unknown类型。
+            </summary>
+        </member>
+        <member name="T:RLF.Runtimes.Models.Enums.ResultStatus">
+            <summary>
+            【闻祖东 2015-04-13 163354】标识接口查询返回的状态。
+            </summary>
+        </member>
+        <member name="T:RLF.Runtimes.Tencent.Cryptography">
+            <summary>
+            【闻祖东 2019-02-19 200842】拷过来，完全没动代码。
+            </summary>
+        </member>
+        <member name="M:RLF.Runtimes.Tencent.Cryptography.AES_decrypt(System.String,System.String,System.String@)">
+            <summary>
+            解密方法
+            </summary>
+            <param name="Input">密文</param>
+            <param name="EncodingAESKey"></param>
+            <returns></returns>
+            
+        </member>
+        <member name="M:RLF.Runtimes.Tencent.Cryptography.chr(System.Int32)">
+            将数字转化成ASCII码对应的字符，用于对明文进行补码
+            
+            @param a 需要转化的数字
+            @return 转化得到的字符
+        </member>
+        <member name="T:RLF.Runtimes.Tencent.IWeixinResponse">
+            <summary>
+            【闻祖东 2019-05-08 180236】标识由微信服务器返回的Response数据结构。
+            </summary>
+        </member>
+        <member name="T:RLF.Runtimes.Tencent.WXBizMsgCrypt">
+            <summary>
+            【闻祖东 2019-02-19 200820】原封不动拷过来。代码完全未动。
+            </summary>
+        </member>
+        <member name="T:RLF.Runtimes.Tencent.WxPay.WxPayTradeType">
+            <summary>
+            【闻祖东 2019-05-15 113605】微信支付类型。文档来自：https://pay.weixin.qq.com/wiki/doc/api/native.php?chapter=4_2
+            </summary>
+        </member>
+        <member name="F:RLF.Runtimes.Tencent.WxPay.WxPayTradeType.JSAPI">
+            <summary>
+            JSAPI支付（或小程序支付）
+            </summary>
+        </member>
+        <member name="F:RLF.Runtimes.Tencent.WxPay.WxPayTradeType.NATIVE">
+            <summary>
+            Native支付
+            </summary>
+        </member>
+        <member name="F:RLF.Runtimes.Tencent.WxPay.WxPayTradeType.APP">
+            <summary>
+            app支付
+            </summary>
+        </member>
+        <member name="F:RLF.Runtimes.Tencent.WxPay.WxPayTradeType.MWEB">
+            <summary>
+            H5支付
+            </summary>
+        </member>
+        <member name="F:RLF.Runtimes.Tencent.WxPay.WxPayTradeType.MICROPAY">
+            <summary>
+            付款码支付，付款码支付有单独的支付接口，所以接口不需要上传，该字段在对账单中会出现
+            </summary>
+        </member>
+        <member name="T:RLF.Runtimes.Utilities.AU">
+            <summary>
+            【闻祖东 2016-04-07 180529】AlgorithmUtility的缩写
+            </summary>
+        </member>
+        <member name="M:RLF.Runtimes.Utilities.AU.MD5(System.String)">
+            <summary>
+            【闻祖东 2015-10-14 112027】默认将encoding参数设置为utf-8
+            </summary>
+            <param name="plain"></param>
+            <returns></returns>
+        </member>
+        <member name="T:RLF.Runtimes.Utilities.BU">
+            <summary>
+            【闻祖东 2015-05-14 110312】BsonUtilities的缩写。
+            </summary>
+        </member>
+        <member name="M:RLF.Runtimes.Utilities.BU.SetStringEmpty``1(``0)">
+            <summary>
+            【闻祖东 2015-02-14 000828】对象的字符串类型属性为null时，将其赋值为字符串空。
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="obj"></param>
+        </member>
+        <member name="M:RLF.Runtimes.Utilities.BU.GenerateBsonDocument(System.String)">
+            <summary>
+            【闻祖东 2015-07-14 181622】将Json序列化的字符串转化为一个BsonDocument。
+            </summary>
+            <param name="jsonStr">传入的须要是一个合法的Json序列化的字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:RLF.Runtimes.Utilities.BU.CheckIfObjectId(System.String)">
+            <summary>
+            【闻祖东 2015-08-03 180146】检查一个字符串是否是ObjectId的值。
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="T:RLF.Runtimes.Utilities.CU">
+            <summary>
+            【闻祖东 2015-04-10 100941】CommonUtility的缩写
+            </summary>
+        </member>
+        <member name="F:RLF.Runtimes.Utilities.CU._MongoIdField">
+            <summary>
+            【闻祖东 2015-01-23 164708】绝对不会改变的Mongodb的ID标识字段的名称。
+            </summary>
+        </member>
+        <member name="M:RLF.Runtimes.Utilities.CU.GetRandomStr(System.Int32)">
+            <summary>
+            【闻祖东 2018-11-05 101511】生成指定长度的随机字符串，不包含数字 0 、1， 字母（包含大小写） i 、 l 、o
+            </summary>
+            <param name="length"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RLF.Runtimes.Utilities.CU.SetRoleftApiResp(System.Web.HttpResponse)">
+            <summary>
+            【闻祖东 2016-12-21 111120】Roleft 的接口的返回头信息通用为：
+            ContentType：application/json
+            ContentEncoding：Encoding.UTF8
+            </summary>
+            <param name="resp"></param>
+        </member>
+        <member name="M:RLF.Runtimes.Utilities.CU.HasValue``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            【闻祖东 2015-01-05 220519】只要为null或者数量为0都为业务上的无值。
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="list"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RLF.Runtimes.Utilities.CU.HasNoValue``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            【闻祖东 2019-03-13 172745】只要为null或者数量为0都为业务上的无值。
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="list"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RLF.Runtimes.Utilities.CU.Count``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            【闻祖东 2015-06-25 175049】计算数量，若传入对象为null则数量为0。
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="list"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RLF.Runtimes.Utilities.CU.CheckIfBetween(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            【闻祖东 2015-06-25 174842】检查是否在区间内，不包含等于的情况。
+            </summary>
+            <param name="src"></param>
+            <param name="min"></param>
+            <param name="max"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RLF.Runtimes.Utilities.CU.CheckIfBetweenEqual(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            【闻祖东 2015-06-25 174901】检查是否在区间内，包含等于的情况。
+            </summary>
+            <param name="src"></param>
+            <param name="min"></param>
+            <param name="max"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RLF.Runtimes.Utilities.CU.CompareString(System.String,System.String)">
+            <summary>
+            【闻祖东 2015-04-30 101857】不区分大小写的比较两个字符串是否相等。
+            </summary>
+            <param name="strA"></param>
+            <param name="strB"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RLF.Runtimes.Utilities.CU.CheckIfIp(System.String)">
+            <summary>
+            【闻祖东 2015-06-25 174924】检查是否合法的IP地址。
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RLF.Runtimes.Utilities.CU.Spread``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            【闻祖东 2015-01-13 220439】保证IEnumerable对象不为Null以便于直接遍历。
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="list"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RLF.Runtimes.Utilities.CU.GenListFromQsParam``1(System.String)">
+            <summary>
+            【闻祖东 2015-07-20 162030】针对客户端传来的形如[34,54]的参数进行反序列化。
+            </summary>
+            <param name="sParam"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RLF.Runtimes.Utilities.CU.GenRandom(System.Int32,System.Int32)">
+            <summary>
+            【闻祖东 2015-07-27 143706】生成一个介于 min 和 max 之间的随机数。
+            【闻祖东 2017-09-28 163646】包含min，但不包含max 此处只修改注释而不修改方法逻辑本身了，以免其他项目引用了出现不可预知的bug。
+            </summary>
+            <param name="min"></param>
+            <param name="max"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RLF.Runtimes.Utilities.CU.DeepClone``1(``0)">
+            <summary>
+            【闻祖东 2015-07-31 144027】深拷贝一个对象。
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RLF.Runtimes.Utilities.CU.GetAppSettingValue(System.String)">
+            <summary>
+            【闻祖东 2015-08-04 135215】获取配置文件中的AppSetting的值
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RLF.Runtimes.Utilities.CU.GetConnString(System.String)">
+            <summary>
+            【闻祖东 2015-08-04 135231】获取配置文件中的连接字符串的值。
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RLF.Runtimes.Utilities.CU.CheckDir4File(System.String)">
+            <summary>
+            【闻祖东 2015-11-11 144456】检查文件的目录是否存在，如果不存在，则创建。
+            </summary>
+            <param name="fileFullName"></param>
+        </member>
+        <member name="M:RLF.Runtimes.Utilities.CU.Save2File(System.String,System.String)">
+            <summary>
+            【闻祖东 2015-11-11 143129】默认使用UTF8编码进行保存。
+            </summary>
+            <param name="fileFullName"></param>
+            <param name="content"></param>
+        </member>
+        <member name="M:RLF.Runtimes.Utilities.CU.Convert2DateTime(System.Int64)">
+            <summary>
+            【闻祖东 2015-09-11 133559】由时间戳转换为本地时间。
+            </summary>
+            <param name="timestamp"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RLF.Runtimes.Utilities.CU.ToFixed(System.Decimal,System.Int32)">
+            <summary>
+            【闻祖东 2015-09-14 141048】保存小数为几位小数。
+            </summary>
+            <param name="value">【闻祖东 2015-10-23 140336】原值</param>
+            <param name="length">【闻祖东 2015-10-23 140314】几位小数</param>
+            <returns></returns>
+        </member>
+        <member name="M:RLF.Runtimes.Utilities.CU.ToFixed2(System.Double,System.Int32)">
+            <summary>
+            【闻祖东 2016-06-20 144839】保留几位小数并且做四舍五入。
+            </summary>
+            <param name="value"></param>
+            <param name="length"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RLF.Runtimes.Utilities.CU.Obj2Bytes``1(``0)">
+            <summary>
+            【闻祖东 2016-10-24 210659】二进制序列化，从对象到字节流。
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RLF.Runtimes.Utilities.CU.Bytes2Obj``1(System.Byte[])">
+            <summary>
+            【闻祖东 2016-10-24 210716】二进制反序列化，从二进制流到对象。
+            </summary>
+            <param name="bytes"></param>
+            <returns></returns>
+        </member>
+        <member name="P:RLF.Runtimes.Utilities.CU.RandomBool">
+            <summary>
+            【闻祖东 2018-07-18 194233】产生随机的 bool 值。
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:RLF.Runtimes.Utilities.CU.RandomDate">
+            <summary>
+            【闻祖东 2018-08-02 135442】于时间戳之后的任意一日。
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:RLF.Runtimes.Utilities.CU.RandomDateTime">
+            <summary>
+            【闻祖东 2018-08-02 135442】于时间戳之后的任意一日的任意时间。
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:RLF.Runtimes.Utilities.EU">
+            <summary>
+            【闻祖东 2015-01-29 172739】EnumUtility的缩写。
+            </summary>
+        </member>
+        <member name="M:RLF.Runtimes.Utilities.EU.Convert2Enum``1(System.Object,``0)">
+            <summary>
+            【zdwen 2012-2-18-233326】将与枚举值字符串相同的字符串转换为相应的枚举值，不区分大小写。
+            注意泛型T一定需要是一个枚举值类型，否则会在运行时抛出自定义异常。
+            </summary>
+            <typeparam name="T">实际的枚举类型</typeparam>
+            <param name="strValue">字符串的值</param>
+            <param name="defaultValue">无法匹配时所取的默认值</param>
+            <returns>匹配的枚举值</returns>
+        </member>
+        <member name="M:RLF.Runtimes.Utilities.EU.C2E``1(System.Object,``0)">
+            <summary>
+            【闻祖东 2015-08-29 155123】Convert2Enum 的缩写。
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="obj"></param>
+            <param name="defaultValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RLF.Runtimes.Utilities.EU.Random``1(``0)">
+            <summary>
+            【闻祖东 2018-07-11 175203】随机的取一个枚举值，但是不包含传入的 Unknown 本身。
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="unknownValueEnum">【闻祖东 2018-07-11 201952】Roleft.com 定义下的枚举，都一定会有一个 Unknown 值。</param>
+            <returns></returns>
+        </member>
+        <member name="T:RLF.Runtimes.Utilities.HU">
+            <summary>
+            【闻祖东 2017-01-07 201838】HttpUtility的简写。
+            </summary>
+        </member>
+        <member name="M:RLF.Runtimes.Utilities.HU.PostWithStream``1(System.String,``0)">
+            <summary>
+            【闻祖东 2017-01-07 200612】默认约定情况下，Roleft 的系统间通信的POST请求是将对象直接JSON序列化之后作为HTTP请求的主体
+            POST给服务端。对应处理方法为 HU.ExtractFromStream()
+            【闻祖东 2017-01-07 201637】此方法带有明显 Roleft 专有特征，不一定适合 Roleft 之外使用场景。
+            【闻祖东 2017-03-11 161436】如果obj本身是一个字符串，将不会对其做再一次的JSON序列化。
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="url"></param>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RLF.Runtimes.Utilities.HU.ExtractFromStream``1(System.IO.Stream)">
+            <summary>
+            【闻祖东 2017-01-07 201112】默认约定情况下，从POST请求的流信息中提取对象。是 HU.PostWithStream() 方法的对应处理方法。
+            【闻祖东 2017-01-07 201637】此方法带有明显 Roleft 专有特征，不一定适合 Roleft 之外使用场景。
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="inputStream"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RLF.Runtimes.Utilities.HU.C2StringFromStream(System.IO.Stream)">
+            <summary>
+            【闻祖东 2017-01-10 210236】从Stream中提取字符串.
+            </summary>
+            <param name="inputStream"></param>
+            <returns></returns>
+        </member>
+        <member name="T:RLF.Runtimes.Utilities.IU">
+            <summary>
+            【闻祖东 2016-09-08 113905】IPUtility的缩写。
+            【闻祖东 2016-09-08 114030】是从昌波处复制过来的代码，未做重构和修改。
+            </summary>
+        </member>
+        <member name="T:RLF.Runtimes.Utilities.JU">
+            <summary>
+            【闻祖东 2015-04-09 171312】JsonUtility的缩写。
+            </summary>
+        </member>
+        <member name="M:RLF.Runtimes.Utilities.JU.Serialize(System.Object)">
+            <summary>
+            【闻祖东 2015-04-09 164441】默认会将属性的首字母小写处理，属性名中的其他字符串不变。
+            【闻祖东 2019-04-08 171541】同时枚举值在序列化输出时会直接以字符串形式输出。
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RLF.Runtimes.Utilities.JU.SerializeEnumInt(System.Object)">
+            <summary>
+            【闻祖东 2019-03-22 120512】会将枚举处理成 int 的序列化方式。
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="T:RLF.Runtimes.Utilities.LU">
+            <summary>
+            【闻祖东 2016-08-18 115223】LogUtility的简称。
+            </summary>
+        </member>
+        <member name="E:RLF.Runtimes.Utilities.LU.Call4CoreDllModifiedTime">
+            <summary>
+            【闻祖东 2015-07-15 102453】获取核心dll的最后修改时间。
+            </summary>
+        </member>
+        <member name="M:RLF.Runtimes.Utilities.LU.Log4Exception(System.String,System.Object,System.Exception)">
+            <summary>
+            【闻祖东 2011-12-30-203842】记录日志
+            </summary>
+            <param name="desc4Biz">业务描述</param>
+            <param name="obj">需要进行xml序列化的对象</param>
+            <param name="ex">异常对象</param>
+        </member>
+        <member name="T:RLF.Runtimes.Utilities.RU">
+            <summary>
+            【闻祖东 2016-11-29 153045】RuntimeUtility的缩写。
+            </summary>
+        </member>
+        <member name="F:RLF.Runtimes.Utilities.RU._Version">
+            <summary>
+            【闻祖东 2019-02-01 153418】类库的版本好。很重要。Nuget 需要用到。
+            </summary>
+        </member>
+        <member name="M:RLF.Runtimes.Utilities.RU.Check4iOSDevice(System.String)">
+            <summary>
+            【闻祖东 2016-12-09 142006】传入值为iOS设备定义的deviceString，Ref2骆勇代码：
+            https://img.ireadercity.com/2016-12-9/from_luoyong.jpg
+            </summary>
+            <param name="deviceString"></param>
+            <returns>【闻祖东 2016-12-09 142527】如果不在已定义的deviceString中，则返回null。</returns>
+        </member>
+        <member name="T:RLF.Runtimes.Utilities.UU">
+            <summary>
+            【闻祖东 2016-09-20 162210】UtilsUtility的缩写。因为是只服务于 Roleft 的Utils服务，所以里面有一些与
+            utils.roleft.com 耦合非常大的地方。有自定义访问Utils的时候可以根据 RLF.Runtimes的代码进行修改。
+            </summary>
+        </member>
+        <member name="P:RLF.Runtimes.Utilities.UU.UrlBase">
+            <summary>
+            【闻祖东 2018-03-13 160114】形如 http://utils.roleft.com/ 带斜杠
+            如果不赋值，那么就是 http://utils.roleft.com/
+            </summary>
+        </member>
+        <member name="M:RLF.Runtimes.Utilities.UU.ReportIssueRoleft(RLF.Runtimes.Models.Entities.UtilSvc.Issues.IssueParam)">
+            <summary>
+            【闻祖东 2018-03-14 100542】报告问题
+            【闻祖东 2019-01-24 115739】改名是为了LTC用LTC用专门的Issue汇报。
+            </summary>
+            <param name="req"></param>
+            <returns></returns>
+        </member>
+        <member name="T:RLF.Runtimes.Utilities.XU">
+            <summary>
+            【闻祖东 2019-02-19 203826】XmlUtility的缩写。
+            </summary>
+        </member>
+    </members>
+</doc>
